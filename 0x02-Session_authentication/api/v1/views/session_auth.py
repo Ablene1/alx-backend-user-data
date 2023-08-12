@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """
 Session Authentication Views
 """
@@ -12,8 +11,6 @@ from os import getenv
 @app_views.route('/auth_session/login', methods=['POST'], strict_slashes=False)
 def login():
     """ POST /auth_session/login
-    Return:
-      - Response
     """
     user_email = request.form.get('email')
     user_pwd = request.form.get('password')
@@ -44,8 +41,6 @@ def login():
                  strict_slashes=False)
 def logout():
     """ DELETE /auth_session/logout
-    Return:
-      - Response
     """
     from api.v1.app import auth
     if auth.destroy_session(request):
